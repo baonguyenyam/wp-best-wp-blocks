@@ -10,18 +10,18 @@
  *
  * @link              https://baonguyenyam.github.io/
  * @since             1.0.0
- * @package           BEST_WP_LIGHTWEIGHT
+ * @package           BEST_WP_BLOCKS
  *
  * @wordpress-plugin
- * Plugin Name:       Best WP Lightweight
+ * Plugin Name:       Best WP Blocks
  * Plugin URI:        https://wow-wp.com
- * Description:       Best WP Lightweight help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.
+ * Description:       Best WP Blocks help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.
  * Version:           1.0.0
  * Author:            WOW WordPress
- * Author URI:        https://github.com/baonguyenyam/wp-best-wp-lightweight
+ * Author URI:        https://github.com/baonguyenyam/wp-best-wp-blocks
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       best-wp-lightweight
+ * Text Domain:       best-wp-blocks
  * Domain Path:       /languages
  */
 
@@ -31,35 +31,35 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'BEST_WP_LIGHTWEIGHT_NICENAME', 'Best WP Lightweight' );
-define( 'BEST_WP_LIGHTWEIGHT_PREFIX', 'best_wp_lightweight' );
-define( 'BEST_WP_LIGHTWEIGHT_VERSION', '1.0.0' );
+define( 'BEST_WP_BLOCKS_NICENAME', 'Best WP Blocks' );
+define( 'BEST_WP_BLOCKS_PREFIX', 'best_wp_blocks' );
+define( 'BEST_WP_BLOCKS_VERSION', '1.0.0' );
 
-require plugin_dir_path( __FILE__ ) . 'classes/wp_lightweight_setup.php';
-require plugin_dir_path( __FILE__ ) . 'classes/wp_lightweight_disable_password_reset.php';
-require plugin_dir_path( __FILE__ ) . 'classes/wp_lightweight_init.php';
-require plugin_dir_path( __FILE__ ) . 'classes/wp_lightweight_cleanup.php';
+require plugin_dir_path( __FILE__ ) . 'classes/wp_blocks_setup.php';
+require plugin_dir_path( __FILE__ ) . 'classes/wp_blocks_disable_password_reset.php';
+require plugin_dir_path( __FILE__ ) . 'classes/wp_blocks_init.php';
+require plugin_dir_path( __FILE__ ) . 'classes/wp_blocks_cleanup.php';
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-bn-wp-activator.php
  */
-function activate_best_wp_lightweight() {
+function activate_best_wp_blocks() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-bn-wp-activator.php';
-	BEST_WP_LIGHTWEIGHT_Activator::activate();
+	BEST_WP_BLOCKS_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-bn-wp-deactivator.php
  */
-function deactivate_best_wp_lightweight() {
+function deactivate_best_wp_blocks() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-bn-wp-deactivator.php';
-	BEST_WP_LIGHTWEIGHT_Deactivator::deactivate();
+	BEST_WP_BLOCKS_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_best_wp_lightweight' );
-register_deactivation_hook( __FILE__, 'deactivate_best_wp_lightweight' );
+register_activation_hook( __FILE__, 'activate_best_wp_blocks' );
+register_deactivation_hook( __FILE__, 'deactivate_best_wp_blocks' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -76,10 +76,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-bn-wp.php';
  *
  * @since    1.0.0
  */
-function run_best_wp_lightweight() {
+function run_best_wp_blocks() {
 
-	$plugin = new BEST_WP_LIGHTWEIGHT();
+	$plugin = new BEST_WP_BLOCKS();
 	$plugin->run();
 
 }
-run_best_wp_lightweight();
+run_best_wp_blocks();

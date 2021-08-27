@@ -6,8 +6,8 @@
  * @link       baonguyenyam.github.io
  * @since      1.0.0
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  * @author     Nguyen Pham <baonguyenyam@gmail.com>
  */
-class BEST_WP_LIGHTWEIGHT_Activator {
+class BEST_WP_BLOCKS_Activator {
 
 
 	/**

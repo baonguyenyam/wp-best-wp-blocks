@@ -133,8 +133,8 @@ class WP_LightWeightCleanUPS {
         return $old_help;
     }
     public function addCopyright( $text ) {
-        if(carbon_get_theme_option('___wp_lightweight_add_copyright')) {
-            $text = carbon_get_theme_option('___wp_lightweight_add_copyright');
+        if(carbon_get_theme_option('___wp_blocks_add_copyright')) {
+            $text = carbon_get_theme_option('___wp_blocks_add_copyright');
         }
         return $text;
     }
@@ -147,33 +147,33 @@ class WP_LightWeightCleanUPS {
 }
 
 // CLEAN UP 
-add_action( 'carbon_fields_fields_registered', '___wp_lightweight_clearUpSystem' );
+add_action( 'carbon_fields_fields_registered', '___wp_blocks_clearUpSystem' );
 
-function ___wp_lightweight_clearUpSystem() {
+function ___wp_blocks_clearUpSystem() {
     $attrs = array(
-        'addCopyright' => carbon_get_theme_option('___wp_lightweight_add_copyright') ? carbon_get_theme_option('___wp_lightweight_add_copyright') : null,
-        'removeDashboardbyID' => carbon_get_theme_option('___wp_lightweight_remove_dashboardbyid') ? carbon_get_theme_option('___wp_lightweight_remove_dashboardbyid') : null,
-        'removeLogo' => carbon_get_theme_option('___wp_lightweight_remove_wp_logo') ? true: false,
-        'removeHelp' => carbon_get_theme_option('___wp_lightweight_remove_help_menu') ? true: false,
-        'removeDashboardQuickPress' => carbon_get_theme_option('___wp_lightweight_remove_dashboard_quick_press') ? true: false,
-        'removeDashboardPrimary' => carbon_get_theme_option('___wp_lightweight_remove_dashboard_primary') ? true: false,
-        'removeYoast' => carbon_get_theme_option('___wp_lightweight_remove_yoast_db_widget') ? true: false,
-        'removeSiteHealth' => carbon_get_theme_option('___wp_lightweight_remove_dashboard_site_health') ? true: false,
-        'removeDashboardActivity' => carbon_get_theme_option('___wp_lightweight_remove_dashboard_activity') ? true: false,
-        'removeAtAGlance' => carbon_get_theme_option('___wp_lightweight_remove_dashboard_right_now') ? true: false,
-        'removeWelcome' => carbon_get_theme_option('___wp_lightweight_remove_welcome_panel') ? true: false,
-        'removeUpdate' => carbon_get_theme_option('___wp_lightweight_remove_update_nag') ? true: false,
-        'removeGutenbergPanel' => carbon_get_theme_option('___wp_lightweight_remove_gutenberg_panel') ? true: false,
-        'removeNotice' => carbon_get_theme_option('___wp_lightweight_remove_notice') ? true: false,
-        'removeAdminBar' => carbon_get_theme_option('___wp_lightweight_remove_admin_bar') ? true: false,
-        'removeAdminText' => carbon_get_theme_option('___wp_lightweight_remove_admin_text') ? true: false,
-        'removeGotoLogin' => carbon_get_theme_option('___wp_lightweight_remove_goto') ? true: false,
-        'removeWidgetBlock' => carbon_get_theme_option('___wp_lightweight_disable_widget_block_editor') ? true: false,
-        'removeIncoming' => carbon_get_theme_option('___wp_lightweight_remove_incoming_links') ? true: false,
-        'removePlugins' => carbon_get_theme_option('___wp_lightweight_remove_plugins') ? true: false,
-        'removeSecondary' => carbon_get_theme_option('___wp_lightweight_remove_secondary') ? true: false,
-        'removeDraft' => carbon_get_theme_option('___wp_lightweight_remove_recent_drafts') ? true: false,
-        'removeComment' => carbon_get_theme_option('___wp_lightweight_remove_recent_comments') ? true: false,
+        'addCopyright' => carbon_get_theme_option('___wp_blocks_add_copyright') ? carbon_get_theme_option('___wp_blocks_add_copyright') : null,
+        'removeDashboardbyID' => carbon_get_theme_option('___wp_blocks_remove_dashboardbyid') ? carbon_get_theme_option('___wp_blocks_remove_dashboardbyid') : null,
+        'removeLogo' => carbon_get_theme_option('___wp_blocks_remove_wp_logo') ? true: false,
+        'removeHelp' => carbon_get_theme_option('___wp_blocks_remove_help_menu') ? true: false,
+        'removeDashboardQuickPress' => carbon_get_theme_option('___wp_blocks_remove_dashboard_quick_press') ? true: false,
+        'removeDashboardPrimary' => carbon_get_theme_option('___wp_blocks_remove_dashboard_primary') ? true: false,
+        'removeYoast' => carbon_get_theme_option('___wp_blocks_remove_yoast_db_widget') ? true: false,
+        'removeSiteHealth' => carbon_get_theme_option('___wp_blocks_remove_dashboard_site_health') ? true: false,
+        'removeDashboardActivity' => carbon_get_theme_option('___wp_blocks_remove_dashboard_activity') ? true: false,
+        'removeAtAGlance' => carbon_get_theme_option('___wp_blocks_remove_dashboard_right_now') ? true: false,
+        'removeWelcome' => carbon_get_theme_option('___wp_blocks_remove_welcome_panel') ? true: false,
+        'removeUpdate' => carbon_get_theme_option('___wp_blocks_remove_update_nag') ? true: false,
+        'removeGutenbergPanel' => carbon_get_theme_option('___wp_blocks_remove_gutenberg_panel') ? true: false,
+        'removeNotice' => carbon_get_theme_option('___wp_blocks_remove_notice') ? true: false,
+        'removeAdminBar' => carbon_get_theme_option('___wp_blocks_remove_admin_bar') ? true: false,
+        'removeAdminText' => carbon_get_theme_option('___wp_blocks_remove_admin_text') ? true: false,
+        'removeGotoLogin' => carbon_get_theme_option('___wp_blocks_remove_goto') ? true: false,
+        'removeWidgetBlock' => carbon_get_theme_option('___wp_blocks_disable_widget_block_editor') ? true: false,
+        'removeIncoming' => carbon_get_theme_option('___wp_blocks_remove_incoming_links') ? true: false,
+        'removePlugins' => carbon_get_theme_option('___wp_blocks_remove_plugins') ? true: false,
+        'removeSecondary' => carbon_get_theme_option('___wp_blocks_remove_secondary') ? true: false,
+        'removeDraft' => carbon_get_theme_option('___wp_blocks_remove_recent_drafts') ? true: false,
+        'removeComment' => carbon_get_theme_option('___wp_blocks_remove_recent_comments') ? true: false,
     );
     new WP_LightWeightCleanUPS($attrs);
 }

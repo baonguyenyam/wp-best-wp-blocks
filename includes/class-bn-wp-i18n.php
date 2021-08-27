@@ -9,8 +9,8 @@
  * @link       baonguyenyam.github.io
  * @since      1.0.0
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  * @author     Nguyen Pham <baonguyenyam@gmail.com>
  */
-class BEST_WP_LIGHTWEIGHT_i18n {
+class BEST_WP_BLOCKS_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class BEST_WP_LIGHTWEIGHT_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'best-wp-lightweight',
+			'best-wp-blocks',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

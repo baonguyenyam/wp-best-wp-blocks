@@ -6,8 +6,8 @@
  * @link       baonguyenyam.github.io
  * @since      1.0.0
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  * @author     Nguyen Pham <baonguyenyam@gmail.com>
  */
-class BEST_WP_LIGHTWEIGHT_Loader {
+class BEST_WP_BLOCKS_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

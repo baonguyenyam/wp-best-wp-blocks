@@ -8,11 +8,11 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Best WP Lightweight help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.
+Best WP Blocks help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.
 
 == Description ==
 
-Best WP Lightweight help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.
+Best WP Blocks help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.
 
 == Installation ==
 

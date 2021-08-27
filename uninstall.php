@@ -22,7 +22,7 @@
  * @link       baonguyenyam.github.io
  * @since      1.0.0
  *
- * @package    BEST_WP_LIGHTWEIGHT
+ * @package    BEST_WP_BLOCKS
  */
 
 // If uninstall not called from WordPress, then exit.

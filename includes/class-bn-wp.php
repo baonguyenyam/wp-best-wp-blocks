@@ -9,8 +9,8 @@
  * @link       baonguyenyam.github.io
  * @since      1.0.0
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/includes
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/includes
  * @author     Nguyen Pham <baonguyenyam@gmail.com>
  */
-class BEST_WP_LIGHTWEIGHT {
+class BEST_WP_BLOCKS {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class BEST_WP_LIGHTWEIGHT {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      BEST_WP_LIGHTWEIGHT_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      BEST_WP_BLOCKS_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -59,10 +59,10 @@ class BEST_WP_LIGHTWEIGHT {
 	 */
 	public function __construct() {
 
-		$this->WP_LightWeight['domain'] = best-wp-lightweight;
-		$this->WP_LightWeight['nicename'] = BEST_WP_LIGHTWEIGHT_NICENAME;
-		$this->WP_LightWeight['prefix'] = BEST_WP_LIGHTWEIGHT_PREFIX;
-		$this->WP_LightWeight['version'] = BEST_WP_LIGHTWEIGHT_VERSION;
+		$this->WP_LightWeight['domain'] = best-wp-blocks;
+		$this->WP_LightWeight['nicename'] = BEST_WP_BLOCKS_NICENAME;
+		$this->WP_LightWeight['prefix'] = BEST_WP_BLOCKS_PREFIX;
+		$this->WP_LightWeight['version'] = BEST_WP_BLOCKS_VERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -75,9 +75,9 @@ class BEST_WP_LIGHTWEIGHT {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - BEST_WP_LIGHTWEIGHT_Loader. Orchestrates the hooks of the plugin.
-	 * - BEST_WP_LIGHTWEIGHT_i18n. Defines internationalization functionality.
-	 * - BEST_WP_LIGHTWEIGHT_Admin. Defines all hooks for the admin area.
+	 * - BEST_WP_BLOCKS_Loader. Orchestrates the hooks of the plugin.
+	 * - BEST_WP_BLOCKS_i18n. Defines internationalization functionality.
+	 * - BEST_WP_BLOCKS_Admin. Defines all hooks for the admin area.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -108,14 +108,14 @@ class BEST_WP_LIGHTWEIGHT {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		$this->loader = new BEST_WP_LIGHTWEIGHT_Loader();
+		$this->loader = new BEST_WP_BLOCKS_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the BEST_WP_LIGHTWEIGHT_i18n class in order to set the domain and to register the hook
+	 * Uses the BEST_WP_BLOCKS_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -123,7 +123,7 @@ class BEST_WP_LIGHTWEIGHT {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new BEST_WP_LIGHTWEIGHT_i18n();
+		$plugin_i18n = new BEST_WP_BLOCKS_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -138,7 +138,7 @@ class BEST_WP_LIGHTWEIGHT {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new BEST_WP_LIGHTWEIGHT_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new BEST_WP_BLOCKS_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles', 9999 );
 		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 9999 );
@@ -169,7 +169,7 @@ class BEST_WP_LIGHTWEIGHT {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    BEST_WP_LIGHTWEIGHT_Loader    Orchestrates the hooks of the plugin.
+	 * @return    BEST_WP_BLOCKS_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

@@ -6,8 +6,8 @@
  * @link       baonguyenyam.github.io
  * @since      1.0.0
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/admin
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    BEST_WP_LIGHTWEIGHT
- * @subpackage BEST_WP_LIGHTWEIGHT/admin
+ * @package    BEST_WP_BLOCKS
+ * @subpackage BEST_WP_BLOCKS/admin
  * @author     Nguyen Pham <baonguyenyam@gmail.com>
  */
-class BEST_WP_LIGHTWEIGHT_Admin {
+class BEST_WP_BLOCKS_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,16 +65,16 @@ class BEST_WP_LIGHTWEIGHT_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in BEST_WP_LIGHTWEIGHT_Loader as all of the hooks are defined
+		 * defined in BEST_WP_BLOCKS_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The BEST_WP_LIGHTWEIGHT_Loader will then create the relationship
+		 * The BEST_WP_BLOCKS_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( 'wp_lightweight_admin_main_css',  plugin_dir_url( __FILE__ ) . 'assets/css/dist/main.min.css', array() );
-		wp_enqueue_script('wp_lightweight_admin_main_js');
+		wp_enqueue_style( 'wp_blocks_admin_main_css',  plugin_dir_url( __FILE__ ) . 'assets/css/dist/main.min.css', array() );
+		wp_enqueue_script('wp_blocks_admin_main_js');
 
 	}
 
@@ -89,16 +89,16 @@ class BEST_WP_LIGHTWEIGHT_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in BEST_WP_LIGHTWEIGHT_Loader as all of the hooks are defined
+		 * defined in BEST_WP_BLOCKS_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The BEST_WP_LIGHTWEIGHT_Loader will then create the relationship
+		 * The BEST_WP_BLOCKS_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_register_script('wp_lightweight_admin_main_js', plugin_dir_url( __FILE__ ) . 'assets/js/dist/main.prod.js', array('jquery'));
-        wp_enqueue_script('wp_lightweight_admin_main_js');
+		wp_register_script('wp_blocks_admin_main_js', plugin_dir_url( __FILE__ ) . 'assets/js/dist/main.prod.js', array('jquery'));
+        wp_enqueue_script('wp_blocks_admin_main_js');
 
 	}
 	

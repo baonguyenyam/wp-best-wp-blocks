@@ -7,7 +7,7 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 	class WP_Lightweight_Core_Setup {
 
 		function __construct()  {
-			add_action( 'carbon_fields_register_fields', array( $this, 'wp_lightweight_option_attach_theme_options') );
+			add_action( 'carbon_fields_register_fields', array( $this, 'wp_blocks_option_attach_theme_options') );
 			add_action( 'after_setup_theme', array( $this, 'crb_load') );
 		}
 
@@ -18,130 +18,130 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 				Field::make( 'separator', 'crb_separator_1', __( 'Global' ) ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_disable_comments',
+					'___wp_blocks_disable_comments',
 					__('Disable Comments on WordPress')
 					)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_gutenberg_editor',
+						'___wp_blocks_remove_gutenberg_editor',
 						__('Disable the Gutenberg Editor')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_admin_bar',
+						'___wp_blocks_remove_admin_bar',
 						__('Remove Admin bar')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_admin_text',
+						'___wp_blocks_remove_admin_text',
 						__('Remove label \'WordPress\' from the title bar')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_wp_logo',
+						'___wp_blocks_remove_wp_logo',
 						__('Remove WP Logo on Admin bar')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_help_menu',
+						'___wp_blocks_remove_help_menu',
 						__('Remove Admin Help Menu')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_goto',
+						'___wp_blocks_remove_goto',
 						__('Remove Go to link from Login page')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_disable_widget_block_editor',
+						'___wp_blocks_disable_widget_block_editor',
 						__('Disable Widget Block Editor')
 						)->set_option_value( 'yes' ),
 					Field::make( 'separator', 'crb_separator_2', __( 'Dashboard' ) ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_dashboard_quick_press',
+						'___wp_blocks_remove_dashboard_quick_press',
 						__('Remove Quick Draft on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_dashboard_primary',
+						'___wp_blocks_remove_dashboard_primary',
 						__('Remove Wordpress Events and News on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_yoast_db_widget',
+						'___wp_blocks_remove_yoast_db_widget',
 						__('Remove Yoast SEO on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_dashboard_site_health',
+						'___wp_blocks_remove_dashboard_site_health',
 						__('Remove Site Health on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_dashboard_activity',
+						'___wp_blocks_remove_dashboard_activity',
 						__('Remove Wordpress Activity on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_dashboard_right_now',
+						'___wp_blocks_remove_dashboard_right_now',
 						__('Remove At a Glance on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_welcome_panel',
+						'___wp_blocks_remove_welcome_panel',
 						__('Remove Welcome Panel on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_update_nag',
+						'___wp_blocks_remove_update_nag',
 						__('Remove Admin Update on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_gutenberg_panel',
+						'___wp_blocks_remove_gutenberg_panel',
 						__('Remove Gutenberg Panel on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_incoming_links',
+						'___wp_blocks_remove_incoming_links',
 						__('Remove Incoming links on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_plugins',
+						'___wp_blocks_remove_plugins',
 						__('Remove Plugins on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_secondary',
+						'___wp_blocks_remove_secondary',
 						__('Remove the secondary on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_recent_drafts',
+						'___wp_blocks_remove_recent_drafts',
 						__('Remove Recent Drafts on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_recent_comments',
+						'___wp_blocks_remove_recent_comments',
 						__('Remove Recent Comments on Dashboard')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_remove_notice',
+						'___wp_blocks_remove_notice',
 						__('Remove Wordpress Notifications')
 						)->set_option_value( 'yes' ),
 					Field::make(
 						'text', 
-						'___wp_lightweight_add_copyright',
+						'___wp_blocks_add_copyright',
 						__('Add text into Footer')
 						)->set_width(6),
 					Field::make(
 						'textarea', 
-						'___wp_lightweight_remove_dashboardbyid',
+						'___wp_blocks_remove_dashboardbyid',
 						__('Remove Panel ID on Dashboard')
-						)->set_rows(6)->set_attribute( 'placeholder', 'enter panel id and add comma (,) end of id. e.g: #wp_lightweight_home, #wp_lightweight_contact' ),
+						)->set_rows(6)->set_attribute( 'placeholder', 'enter panel id and add comma (,) end of id. e.g: #wp_blocks_home, #wp_blocks_contact' ),
 			);
 			return $data;
 		}
@@ -150,33 +150,33 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 				Field::make( 'separator', 'crb_separator_4', __( 'Update' ) ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_remove_core_update',
+					'___wp_blocks_remove_core_update',
 					__('Disable Automatic Core update')
 					)->set_option_value( 'yes' ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_remove_plugins_update',
+					'___wp_blocks_remove_plugins_update',
 					__('Disable Automatic Plugins update')
 					)->set_option_value( 'yes' ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_remove_theme_update',
+					'___wp_blocks_remove_theme_update',
 					__('Disable Automatic Themes update')
 					)->set_option_value( 'yes' ),
 				Field::make( 'separator', 'crb_separator_5', __( 'Update Email Notification' ) ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_remove_core_email',
+					'___wp_blocks_remove_core_email',
 					__('Disable Update Core email notification')
 					)->set_option_value( 'yes' ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_remove_plugins_email',
+					'___wp_blocks_remove_plugins_email',
 					__('Disable Update Plugins email notification')
 					)->set_option_value( 'yes' ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_remove_theme_email',
+					'___wp_blocks_remove_theme_email',
 					__('Disable Update Themes email notification')
 					)->set_option_value( 'yes' ),
 			);
@@ -207,8 +207,8 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 						->set_html('
 						
 						<p><img src="'.plugin_dir_url( __DIR__ ).'/admin/assets/img/logo.png"></p>
-						<h1>Best WP Lightweight</h1>
-						<p>Best WP Lightweight help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.</p>
+						<h1>Best WP Blocks</h1>
+						<p>Best WP Blocks help you configure your websites without any coding knowledge required. Lightweight and using best practices for fastest load time.</p>
 						<hr>
 						<p style="margin-top:0;margin-bottom:0"><strong>Website:</strong> <a href="https://wow-wp.com/" target="_blank">wow-wp.com</a></p>
 						
@@ -223,13 +223,13 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 				Field::make( 'separator', 'crb_separator_7', __( 'Password' ) ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_disable_password_reset',
+					'___wp_blocks_disable_password_reset',
 					__('Disable Password Reset')
 					)->set_option_value( 'yes' )->set_help_text('Disable password reset functionality. Only users with administrator role will be able to change passwords from inside admin area.' ),
 				Field::make( 'separator', 'crb_separator_8', __( 'Theme/Plugin Editing' ) ),
 				Field::make(
 					'checkbox', 
-					'___wp_lightweight_disable_theme_plugin_edit',
+					'___wp_blocks_disable_theme_plugin_edit',
 					__('Disable File Editing')
 					)->set_option_value( 'yes' )->set_help_text('When file editing is enabled, Administrator users can edit the code of themes and plugins directly from the WordPress dashboard. This is a potential security risk because not everyone has the skills to write code, and if a hacker breaks in, they would have access to all your data. That\'s why we recommend disabling it.'),
 			);
@@ -238,9 +238,9 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 		private function ___tabScript() {
 			$data = array();
 			$data = array(
-				Field::make( 'header_scripts', '___wp_lightweight_header_scripts', __( 'Header Scripts' ) ),
+				Field::make( 'header_scripts', '___wp_blocks_header_scripts', __( 'Header Scripts' ) ),
 				// Field::make( 'separator', 'crb_separator', __( 'Separator' ) ),,
-				Field::make( 'footer_scripts', '___wp_lightweight_footer_scripts', __( 'Footer Scripts' ) )
+				Field::make( 'footer_scripts', '___wp_blocks_footer_scripts', __( 'Footer Scripts' ) )
 			);
 			return $data;
 		}
@@ -248,15 +248,15 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 			$data = array();
 			$data = array(
 				// Field::make( 'file', 'crb_file', __( 'File' ) ),
-				Field::make( 'header_scripts', '___wp_lightweight_seo_meta', __( 'Header SEO Meta tags' ) )
+				Field::make( 'header_scripts', '___wp_blocks_seo_meta', __( 'Header SEO Meta tags' ) )
 				->set_rows(20)
 				->set_hook_priority(-9999)
 				->set_help_text( 'If you need to add HTML tags to your header, you should enter them here.' )
 			);
 			return $data;
 		}
-		function wp_lightweight_option_attach_theme_options() {
-			Container::make( 'theme_options', __( 'Best WP Lightweight' ) )
+		function wp_blocks_option_attach_theme_options() {
+			Container::make( 'theme_options', __( 'Best WP Blocks' ) )
 				->set_page_menu_title( 'WP Lightweight' )
 				->set_page_menu_position(2)
 				->set_icon( 'dashicons-admin-generic' )
@@ -264,32 +264,32 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 				->add_tab( __( 'Clean-Up' ), self::___tabCleanUp() )
 				->add_tab( __( 'Updates' ), self::___tabUpdates() )
 				->add_tab( __( 'Login Screen' ), array(
-					Field::make( 'image', '___wp_lightweight_login_logo', __( 'Login Logo' ) )
+					Field::make( 'image', '___wp_blocks_login_logo', __( 'Login Logo' ) )
 					->set_value_type( 'url' )
 					->set_visible_in_rest_api( $visible = true )
 					->set_width(40),
-					Field::make( 'text', '___wp_lightweight_login_logo_width', __( 'Width' ) )
+					Field::make( 'text', '___wp_blocks_login_logo_width', __( 'Width' ) )
 					->set_default_value('300px')
 					->set_classes( 'wp-lightweight-cabon-width-class' )
 					->set_width(20),
-					Field::make( 'text', '___wp_lightweight_login_logo_height', __( 'Height' ) )
+					Field::make( 'text', '___wp_blocks_login_logo_height', __( 'Height' ) )
 					->set_default_value('80px')
 					->set_classes( 'wp-lightweight-cabon-width-class' )
 					->set_width(20),
-					Field::make( 'text', '___wp_lightweight_login_logo_margin', __( 'Margin' ) )
+					Field::make( 'text', '___wp_blocks_login_logo_margin', __( 'Margin' ) )
 					->set_default_value('30px')
 					->set_classes( 'wp-lightweight-cabon-width-class' )
 					->set_width(20),
-					Field::make( 'image', '___wp_lightweight_login_bg', __( 'Login Background' ) )
+					Field::make( 'image', '___wp_blocks_login_bg', __( 'Login Background' ) )
 					->set_value_type( 'url' )
 					->set_visible_in_rest_api( $visible = true )
 					->set_width(40),
-					Field::make( 'color', '___wp_lightweight_login_bg_color', 'Login Background color' )
+					Field::make( 'color', '___wp_blocks_login_bg_color', 'Login Background color' )
 					->set_alpha_enabled( true )
 					->set_width(30),
 					Field::make(
 						'select', 
-						'___wp_lightweight_login_style',
+						'___wp_blocks_login_style',
 						__( 'Choose Style' )
 					)->set_options( array(
 						'default' => 'Default',
@@ -303,7 +303,7 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 						->set_html('With the WP Lightweight, you can quickly rename all your image URLs based on the post title.'),
 					Field::make(
 						'checkbox', 
-						'___wp_lightweight_auto_rename_img',
+						'___wp_blocks_auto_rename_img',
 						__('Rename image file by post title')
 						)->set_option_value( 'yes' )->set_help_text('you-img.jpg => post-title-you-img.jpg' ),
 				) )
