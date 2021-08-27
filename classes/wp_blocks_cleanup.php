@@ -1,38 +1,38 @@
 <?php 
 
-class WP_LightWeightCleanUPS {
+class WP_BlocksCleanUPS {
     public $attrs = null;
     public function __construct($attrs) {
         $this->attrs = $attrs;
         if($this->attrs['removeLogo']) {
-            add_action( 'wp_before_admin_bar_render', 'WP_LightWeightCleanUPS::removeLogo');
+            add_action( 'wp_before_admin_bar_render', 'WP_BlocksCleanUPS::removeLogo');
         };
         if($this->attrs['removeHelp']) {
-            add_filter( 'contextual_help', 'WP_LightWeightCleanUPS::removeHelp', 999, 3 );
+            add_filter( 'contextual_help', 'WP_BlocksCleanUPS::removeHelp', 999, 3 );
         };
         if($this->attrs['removeDashboardQuickPress']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeDashboardQuickPress' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeDashboardQuickPress' );
         };
         if($this->attrs['removeDashboardPrimary']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeDashboardPrimary' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeDashboardPrimary' );
         };
         if($this->attrs['removeYoast']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeYoast' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeYoast' );
         };
         if($this->attrs['removeSiteHealth']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeSiteHealth' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeSiteHealth' );
         };
         if($this->attrs['removeDashboardActivity']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeDashboardActivity' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeDashboardActivity' );
         };
         if($this->attrs['removeAtAGlance']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeAtAGlance' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeAtAGlance' );
         };
         if($this->attrs['removeWelcome']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeWelcome' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeWelcome' );
         };
         if($this->attrs['removeUpdate']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeUpdate' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeUpdate' );
         };
         if($this->attrs['removeAdminBar']) {
             if (!is_admin()) {
@@ -41,10 +41,10 @@ class WP_LightWeightCleanUPS {
             }
         };
         if($this->attrs['removeAdminText']) {
-            add_filter('admin_title', 'WP_LightWeightCleanUPS::removeAdminText', 10, 2);
+            add_filter('admin_title', 'WP_BlocksCleanUPS::removeAdminText', 10, 2);
         };
         if($this->attrs['removeGotoLogin']) {
-            add_action('login_head', 'WP_LightWeightCleanUPS::removeGotoLogin');
+            add_action('login_head', 'WP_BlocksCleanUPS::removeGotoLogin');
         };
         if($this->attrs['removeWidgetBlock']) {
             add_filter( 'use_widgets_block_editor', '__return_false' );
@@ -55,7 +55,7 @@ class WP_LightWeightCleanUPS {
             $idhide = '';
             foreach ($arr as $key => $value) {
                 $idhide .= trim($value)."{display:none!important}";
-                // add_action( 'wp_dashboard_setup_'.trim($value), 'WP_LightWeightCleanUPS::removeDashboardbyID', 10, 1 );
+                // add_action( 'wp_dashboard_setup_'.trim($value), 'WP_BlocksCleanUPS::removeDashboardbyID', 10, 1 );
                 // do_action('wp_dashboard_setup_'.trim($value), trim($value));
             }
             if (is_admin() && $arr) {
@@ -65,13 +65,13 @@ class WP_LightWeightCleanUPS {
             }
         };
         if($this->attrs['removeNotice']) {
-            add_action('admin_head','WP_LightWeightCleanUPS::removeNotice');
+            add_action('admin_head','WP_BlocksCleanUPS::removeNotice');
         };
         if($this->attrs['removeGutenbergPanel']) {
-            add_action( 'wp_dashboard_setup', 'WP_LightWeightCleanUPS::removeGutenbergPanel' );
+            add_action( 'wp_dashboard_setup', 'WP_BlocksCleanUPS::removeGutenbergPanel' );
         };
         if($this->attrs['addCopyright']) {
-            add_action( 'admin_footer_text', 'WP_LightWeightCleanUPS::addCopyright' );
+            add_action( 'admin_footer_text', 'WP_BlocksCleanUPS::addCopyright' );
         };
     }
     public function removeLogo() {
@@ -175,5 +175,5 @@ function ___wp_blocks_clearUpSystem() {
         'removeDraft' => carbon_get_theme_option('___wp_blocks_remove_recent_drafts') ? true: false,
         'removeComment' => carbon_get_theme_option('___wp_blocks_remove_recent_comments') ? true: false,
     );
-    new WP_LightWeightCleanUPS($attrs);
+    new WP_BlocksCleanUPS($attrs);
 }

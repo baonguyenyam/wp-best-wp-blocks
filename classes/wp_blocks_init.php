@@ -1,6 +1,6 @@
 <?php 
-if (!class_exists('WP_Lightweight_Core_Init')) {
-    class WP_Lightweight_Core_Init {
+if (!class_exists('WP_Blocks_Core_Init')) {
+    class WP_Blocks_Core_Init {
         function __construct()  {
             add_action( 'admin_bar_menu', array( $this, '___wp_blocks_admin_menu') , 100 );
             add_action( 'login_enqueue_scripts', array( $this, '___wp_blocks_login_logo' ));
@@ -223,7 +223,7 @@ if (!class_exists('WP_Lightweight_Core_Init')) {
         // DISABLE PASSWORD RESET 
         public function ___wp_blocks_disable_password_reset() {
             if(carbon_get_theme_option('___wp_blocks_disable_password_reset')) {
-                new WP_Lightweight_Password_Reset_Removed();
+                new WP_Blocks_Password_Reset_Removed();
             }
         }
 
@@ -239,4 +239,4 @@ if (!class_exists('WP_Lightweight_Core_Init')) {
     }
 }
 
-new WP_Lightweight_Core_Init();
+new WP_Blocks_Core_Init();

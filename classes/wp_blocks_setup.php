@@ -3,8 +3,8 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-if (!class_exists('WP_Lightweight_Core_Setup')) {
-	class WP_Lightweight_Core_Setup {
+if (!class_exists('WP_Blocks_Core_Setup')) {
+	class WP_Blocks_Core_Setup {
 
 		function __construct()  {
 			add_action( 'carbon_fields_register_fields', array( $this, 'wp_blocks_option_attach_theme_options') );
@@ -320,4 +320,4 @@ if (!class_exists('WP_Lightweight_Core_Setup')) {
 	}
 }
 
-new WP_Lightweight_Core_Setup();
+new WP_Blocks_Core_Setup();

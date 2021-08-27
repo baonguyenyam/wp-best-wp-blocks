@@ -1,5 +1,5 @@
 <?php
-class WP_Lightweight_Password_Reset_Removed
+class WP_Blocks_Password_Reset_Removed
 {
  
   function __construct() 

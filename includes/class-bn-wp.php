@@ -46,7 +46,7 @@ class BEST_WP_BLOCKS {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $WP_LightWeight;
+	protected $WP_Blocks;
 
 	/**
 	 * Define the core functionality of the plugin.
@@ -59,10 +59,9 @@ class BEST_WP_BLOCKS {
 	 */
 	public function __construct() {
 
-		$this->WP_LightWeight['domain'] = best-wp-blocks;
-		$this->WP_LightWeight['nicename'] = BEST_WP_BLOCKS_NICENAME;
-		$this->WP_LightWeight['prefix'] = BEST_WP_BLOCKS_PREFIX;
-		$this->WP_LightWeight['version'] = BEST_WP_BLOCKS_VERSION;
+		$this->WP_Blocks['nicename'] = BEST_WP_BLOCKS_NICENAME;
+		$this->WP_Blocks['prefix'] = BEST_WP_BLOCKS_PREFIX;
+		$this->WP_Blocks['version'] = BEST_WP_BLOCKS_VERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -140,7 +139,7 @@ class BEST_WP_BLOCKS {
 
 		$plugin_admin = new BEST_WP_BLOCKS_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles', 9999 );
+		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles', 9999 );
 		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 9999 );
 
 	}
@@ -162,7 +161,7 @@ class BEST_WP_BLOCKS {
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
-		return $this->WP_LightWeight;
+		return $this->WP_Blocks;
 	}
 
 	/**
@@ -182,7 +181,7 @@ class BEST_WP_BLOCKS {
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
-		return $this->WP_LightWeight['version'];
+		return $this->WP_Blocks['version'];
 	}
 
 }
